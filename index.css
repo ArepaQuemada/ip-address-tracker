@@ -1,0 +1,159 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #E7E7E7;
+}
+
+header {
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 15px;
+  width: 60%;
+  max-width: 500px;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  border: none;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+form button {
+  cursor: pointer;
+  padding: 15px 20px 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 21px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 0 10px 10px 0;
+}
+
+form button:hover {
+  opacity: 0.8;
+  transition: .2s;
+}
+
+.header-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  position: relative;
+  background-image: url("images/pattern-bg.png");
+  background-size: cover;
+  height: 45vh;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.info-wrapper {
+  z-index: 2;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  justify-content: space-around;
+  width: 80%;
+  margin-top: -66px;
+  border-radius: 10px;
+}
+
+.info-box {
+  width: 20%;
+  padding: 20px;
+  height: 4rem;
+  border-right: 1px solid grey;
+}
+
+.info-box h3 {
+  font-size: 18px;
+}
+
+.info-box span {
+  font-weight: 500;
+  color: #ABABAB;
+  font-size: 12px;
+}
+
+.no-border {
+  border: none;
+}
+
+.map-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+#mapid {
+  width: 100%;
+  height: 90%;
+}
+
+.attribution {
+  padding: 10px;
+}
+
+@media (max-width: 1040px) {
+  .info-wrapper {
+    text-align: center;
+    margin-top: -99px;
+    max-width: 73%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box {
+    border: none;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+
+  .info-box h3 {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding: 3px;
+  }
+
+  .header-wrapper {
+    justify-content: initial;
+  }
+
+  .background {
+    height: 40vh;
+  }
+}
