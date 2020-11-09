@@ -12,19 +12,27 @@ document.querySelector("form").addEventListener("submit", (e) => {
     ? host.concat(`ipAddress=${value}`)
     : host.concat(`domain=${value}`);
 
-  if (mymap) {
-    mymap.remove();
-    mymap = null;
-  }
   fetchInfoMap(url);
 });
+
+const handleErrors = (r) => {
+  if (r.ok) {
+    return r.json();
+  }
+  throw new Error(r.status);
+}
 
 const fetchInfoMap = (url) => {
   const infoArrayElement = document.querySelectorAll(".info");
 
   fetch(url)
-    .then((r) => r.json())
+    .then((r) => handleErrors(r))
     .then((r) => {
+      if (mymap) {
+        mymap.remove();
+        mymap = null;
+      }
+
       const {
         ip,
         isp,
@@ -54,7 +62,7 @@ const fetchInfoMap = (url) => {
       showMap(lat, lng);
     })
     .catch((err) => {
-      infoArrayElement.forEach(e => e.textContent = '');
+      alert("Invalid ip or url");
     });
 };
 
