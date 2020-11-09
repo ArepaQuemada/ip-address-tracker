@@ -65,7 +65,7 @@ form button:hover {
   position: relative;
   background-image: url("images/pattern-bg.png");
   background-size: cover;
-  height: 50vh;
+  padding-top: 17.3%;
 }
 
 .info-section {
@@ -150,6 +150,6 @@ form button:hover {
   }
 
   .background {
-    height: 40vh;
+    padding-top: 250px;
   }
 }
